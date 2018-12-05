@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "464029067469",
+    "firebase_url": "https://asiahiroba-9825e.firebaseio.com",
+    "project_id": "asiahiroba-9825e",
+    "storage_bucket": "asiahiroba-9825e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464029067469:android:373ea5fece58a73b",
+        "android_client_info": {
+          "package_name": "com.example.asiahiroba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464029067469-79fbj5c9002vq6mot0pu85j0i3p9gsk3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asiahiroba",
+            "certificate_hash": "def303eb8d207f2249f13b3c7399c8f25246410f"
+          }
+        },
+        {
+          "client_id": "464029067469-9kgi3kuvqc4stut9pfr6tjcul479p662.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8LoyQ0FI7s8IpPjEF9ghUz-dv2DfNr9g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464029067469-9kgi3kuvqc4stut9pfr6tjcul479p662.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
