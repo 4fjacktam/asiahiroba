@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+const String _name = "Kent";
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -46,6 +48,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final List<ChatMessage> _messages = <ChatMessage>[];
 
   void _incrementCounter() {
     setState(() {
@@ -54,6 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
+      ChatMessage message = new ChatMessage(                         //new
+        text: "ALLAHU AKBAR",         //new
+      );
+
+
+        _messages.insert(0, message);
       _counter++;
     });
   }
@@ -93,11 +102,19 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'You have been fucked by the button this many times:',
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
+            ),
+            new Flexible(                                             //new
+              child: new ListView.builder(                            //new
+                padding: new EdgeInsets.all(8.0),                     //new
+                reverse: true,                                        //new
+                itemBuilder: (_, int index) => _messages[index],      //new
+                itemCount: _messages.length,                          //new
+              ),                                                      //new
             ),
           ],
         ),
@@ -107,6 +124,38 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class ChatMessage extends StatelessWidget {
+  ChatMessage({this.text, this.animationController});
+  final String text;
+  final AnimationController animationController;
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      margin: const EdgeInsets.symmetric(vertical: 10.0),
+      child: new Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          new Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              new Text(_name, style: Theme.of(context).textTheme.subhead),
+              new Container(
+                margin: const EdgeInsets.only(top: 5.0),
+                child: new Text(text),
+              ),
+              new Icon(Icons.star, color: Colors.red[500]),
+              new Icon(Icons.star, color: Colors.red[500]),
+              new Icon(Icons.star, color: Colors.red[500]),
+              new Icon(Icons.star, color: Colors.red[500]),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
