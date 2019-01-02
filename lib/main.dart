@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 const String _name = "Kent";
 
@@ -41,7 +42,6 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -102,10 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have been fucked by the button this many times:',
-            ),
-            Text(
-              '$_counter',
+              'Count = ' + '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
             new Flexible(                                             //new
@@ -155,3 +152,24 @@ class ChatMessage extends StatelessWidget {
     );
   }
 }
+
+class Song {
+  String key;
+  String name;
+
+  Song(this.name);
+
+  Song.fromSnapshot(DataSnapshot snapshot)
+      : key = snapshot.key,
+        name = snapshot.value["name"];
+
+
+  toJson() {
+    return {
+      "name": name,
+    };
+  }
+}
+
+
+
