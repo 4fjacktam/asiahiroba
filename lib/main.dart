@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       ChatMessage message = new ChatMessage(                         //new
-        text: "ALLAHU AKBAR",         //new
+        text: "★★★★★★★★★★",         //new
       );
 
 
@@ -148,10 +148,6 @@ class ChatMessage extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 5.0),
                 child: new Text(text),
               ),
-              new Icon(Icons.star, color: Colors.red[500]),
-              new Icon(Icons.star, color: Colors.red[500]),
-              new Icon(Icons.star, color: Colors.red[500]),
-              new Icon(Icons.star, color: Colors.red[500]),
             ],
           ),
         ],
